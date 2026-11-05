@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+
+  .container-fluid
+    .row
+      each image in images
+        .col-sm-4
+          img(src='/images/' + image, alt='Random item', style='width: 100%; max-width: 300px; height: 300px; object-fit: cover;')

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+
+  if message
+    p= message
+  else
+    table.table.table-bordered
+      each row in grid
+        tr
+          each value in row
+            td= value
