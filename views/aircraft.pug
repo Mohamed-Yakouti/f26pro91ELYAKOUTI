@@ -2,16 +2,11 @@ extends layout
 
 block content
   h1= title
-
-  div.container-fluid
-    div.row
-      each item, index in results
-        div.col-sm-2(onclick="buy(" + index + ")" style="cursor: pointer; border: 1px solid #ccc; padding: 15px; margin: 5px;")
-          h3 #{item.model}
-          p Manufacturer: #{item.manufacturer}
-          p Passenger capacity: #{item.passenger_capacity}
-
-  script.
-    function buy(index) {
-      alert("You purchased item " + index);
-    }
+  - let items = results;
+  div(class="container-fluid")
+    div(class="row m-1")
+      each item in items
+        div(class="col-sm-2 m-1") 
+          | Aircraft Type: #{item.aircraft_type} <br>
+          | Capacity: #{item.capacity} <br>
+          | Speed: #{item.cruising_speed} km/h
